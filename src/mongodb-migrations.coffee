@@ -173,13 +173,17 @@ class Migrator
 
   create: (dir, id, done, coffeeScript=false) ->
     @_loadMigrationFiles dir, (err, files) ->
+      dateFormat = require('dateformat');
       if err
         return done err
+      # Do some hacks
       maxNum = _.max files.map (f) -> f[0]
       nextNum = Math.max(maxNum, 0) + 1
+      currentDate = new Date();
+      prefix = dateFormat(currentDate, "yyyy-MM-dd");
       slug = (id or '').toLowerCase().replace /\s+/, '-'
       ext = if coffeeScript then 'coffee' else 'js'
-      fileName = path.join dir, "#{nextNum}-#{slug}.#{ext}"
+      fileName = path.join dir, "#{prefix}-#{slug}.#{ext}"
       if coffeeScript
         body = """
           module.exports.id = "#{id}"

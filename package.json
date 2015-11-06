@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-migrations",
+  "name": "mongodb-migrations-date-based",
   "version": "0.5.0",
   "description": "A migration framework for MongoDB",
   "main": "lib/mongodb-migrations.js",
@@ -23,9 +23,9 @@
   "author": "Eugene Mirotin <emirotin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emirotin/mongodb-migrations/issues"
+    "url": "https://github.com/dragoon20/mongodb-migrations/issues"
   },
-  "homepage": "https://github.com/emirotin/mongodb-migrations",
+  "homepage": "https://github.com/dragoon20/mongodb-migrations",
   "dependencies": {
     "lodash": "^3.3.0",
     "q": "^1.0.0",
@@ -42,6 +42,7 @@
     "mocha": "~2.1.0",
     "rimraf": "~2.2.8",
     "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-concat": "~0.5.1"
+    "grunt-contrib-concat": "~0.5.1",
+    "dateformat": "1.0.11"
   }
 }
